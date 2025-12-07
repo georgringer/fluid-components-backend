@@ -1,0 +1,29 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="id"
+		type="string" />
+	<f:argument
+		name="header"
+		type="string" />
+	<f:argument
+		name="active"
+		type="bool"
+		optional="true"
+		default="false" />
+
+	<li
+		role="presentation"
+		class="nav-item t3js-tabmenu-item">
+		<button
+			type="button"
+			class="nav-link {f:if(condition:active,then:'active')}"
+			data-bs-toggle="tab"
+			data-bs-target="#tab-{id}"
+			aria-controls="tab-{id}"
+			role="tab">
+			{header}
+		</button>
+	</li>
+</html>

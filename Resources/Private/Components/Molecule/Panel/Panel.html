@@ -1,0 +1,54 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="title"
+		type="string" />
+	<f:argument
+		name="class"
+		type="string"
+		description="Variant. Can be default,info,danger,success,warning,notice,hidden"
+		default="default" />
+	<f:argument
+		name="collapseIdentifier"
+		type="string"
+		optional="true"
+		description="Set to a unique id to make it collapsble" />
+	<f:if condition="{collapseIdentifier}">
+		<f:then>
+			<div class="panel panel-default">
+				<div
+					class="panel-heading"
+					role="tab">
+					<div class="panel-heading-row">
+						<button
+							class="panel-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#panel-id-{collapseIdentifier}"
+							aria-controls="panel-id-{collapseIdentifier}"
+							aria-expanded="false">
+							<div class="panel-title">{title}</div>
+							<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+				<div
+					id="panel-id-{collapseIdentifier}"
+					class="panel-collapse collapse"
+					data-persist-collapse-state="true"
+					role="tabpanel">
+					<div class="panel-body">{f:slot()}</div>
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="panel panel-{class}">
+				<div class="panel-heading">
+					<div class="panel-title">{title}</div>
+				</div>
+				<div class="panel-body">{f:slot()}</div>
+			</div>
+		</f:else>
+	</f:if>
+</html>

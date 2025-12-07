@@ -1,0 +1,19 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="title"
+		type="string" />
+	<f:argument
+		name="class"
+		type="string"
+		optional="true"
+		default="default"
+		description="Variant. Can be default,info,danger,success,warning,notice,link" />
+	<f:argument
+		name="icon"
+		type="string"
+		optional="true" />
+
+	<button class="btn btn-{class}"><f:if condition="{icon}">{core:icon(identifier:icon)}</f:if> {title}</button>
+</html>

@@ -1,0 +1,63 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="title"
+		type="string"
+		optional="1" />
+	<f:argument
+		name="subtitle"
+		type="string"
+		optional="1" />
+	<f:argument
+		name="additionalClass"
+		type="string"
+		optional="1"
+		description="optional class on card" />
+	<f:argument
+		name="class"
+		type="string"
+		description="Variant. Can be default,info,danger,success,warning,notice,hidden"
+		optional="1"
+		default="" />
+	<f:argument
+		name="icon"
+		type="string"
+		optional="1" />
+	<f:argument
+		name="iconSize"
+		type="string"
+		optional="1"
+		default="small" />
+
+	{f:variable(name:'content',value:'{f:slot()}')}
+
+	<div class="card {f:if(condition:class,then:'card-{card}')} {additionalClass}">
+		<f:if condition="{title} || {subtitle} || {icon}">
+			<div class="card-header">
+				<f:if condition="{icon}">
+					<div class="card-icon">
+						<core:icon
+							identifier="{icon}"
+							size="{iconSize}" />
+					</div>
+				</f:if>
+				<div class="card-header-body">
+					<f:if condition="{title}">
+						<h2 class="card-title">{title}</h2>
+					</f:if>
+					<f:if condition="{subtitle}">
+						<span class="card-subtitle">{subtitle}</span>
+					</f:if>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{content}">
+			<div class="card-body">
+				<div class="card-text">
+					<f:slot />
+				</div>
+			</div>
+		</f:if>
+	</div>
+</html>

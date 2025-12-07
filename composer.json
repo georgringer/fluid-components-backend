@@ -1,0 +1,24 @@
+{
+    "name": "georgringer/fluid-components-backend",
+    "description": "Components for TYPO3 Backend",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "type": "typo3-cms-extension",
+    "autoload": {
+        "psr-4": {
+            "GeorgRinger\\FluidComponentsBackend\\": "Classes"
+        }
+    },
+	"require": {
+		"typo3/cms-fluid": "^13"
+	},
+	"suggest": {
+		"andersundsehr/storybook": "Use storybook to render the components"
+	},
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "fluid_components_backend"
+        }
+    }
+}

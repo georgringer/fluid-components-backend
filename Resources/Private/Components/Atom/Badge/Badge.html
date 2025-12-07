@@ -1,0 +1,21 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="content"
+		type="string" />
+	<f:argument
+		name="class"
+		type="string"
+		optional="true"
+		default="default"
+		description="Variant. Can be default,primary,secondary,info,success,warning,danger,notice" />
+	<f:argument
+		name="pill"
+		type="bool"
+		description="Indicates whether the badge is pill"
+		default="false"
+		optional="true" />
+
+	<span class="badge {f:if(condition:pill,then:'badge-pill')} badge-{class}">{content}</span>
+</html>

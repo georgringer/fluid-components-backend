@@ -1,0 +1,24 @@
+<html
+	data-namespace-typo3-fluid="true"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:argument
+		name="id"
+		type="string" />
+	<f:argument
+		name="content"
+		type="string" />
+	<f:argument
+		name="active"
+		type="bool"
+		optional="true"
+		default="false" />
+
+	<div
+		role="tabpanel"
+		class="tab-pane {f:if(condition:active,then:'active')}"
+		id="tab-{id}">
+		<div class="panel">
+			<div class="panel-body">{content}</div>
+		</div>
+	</div>
+</html>
