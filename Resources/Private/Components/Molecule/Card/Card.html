@@ -32,7 +32,7 @@
 
 	{f:variable(name:'content',value:'{f:slot()}')}
 
-	<div class="card {f:if(condition:class,then:'card-{card}')} {additionalClass}">
+	<div class="card {f:if(condition:class,then:'card-{class}')} {additionalClass}">
 		<f:if condition="{title} || {subtitle} || {icon}">
 			<div class="card-header">
 				<f:if condition="{icon}">

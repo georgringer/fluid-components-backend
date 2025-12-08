@@ -3,12 +3,16 @@
 	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 	<f:argument
 		name="title"
-		type="string" />
+		type="string"
+    />
 	<f:argument
 		name="state"
 		type="int"
 		description="0:ok,1:warning,2:error,-2:notice,-1:info"
-		default="0" />
+        optional="true"
+        default="0"
+		 />
+
 	<f:argument
 		name="icon"
 		type="string"
@@ -21,8 +25,8 @@
 
 	<f:be.infobox
 		title="{title}"
-		state="{state}"
 		iconName="{icon}"
+        state="{state}"
 		disableIcon="{disableIcon}"
 		message="{f:slot()}" />
 </html>
