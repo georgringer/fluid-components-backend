@@ -42,6 +42,12 @@ Now you can use the components
     title="Infobox">{content}</fb:molecule.infobox>
 ```
 
+### Button
+
+```html
+<fb:atom.button>{cta.label}</fb:atom.button>
+```
+
 ## Usage with storybook
 
 Add the components to your `main.ts`, e.g. `'../vendor/georgringer/fluid-components-backend/.storybook/**/*.stories.ts'`
