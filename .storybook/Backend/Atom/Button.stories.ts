@@ -6,7 +6,7 @@ export default {
 
 export const Button: StoryObj = {
   args: {
-    title: "Default Button",
+    slot____default: "Default Button",
   },
   argTypes: {
     class: {
@@ -17,7 +17,7 @@ export const Button: StoryObj = {
 };
 
 const baseArgs = {
-  title: "With Icon + class",
+  slot____default: "With Icon + class",
 };
 
 const createButtonVariant = (
