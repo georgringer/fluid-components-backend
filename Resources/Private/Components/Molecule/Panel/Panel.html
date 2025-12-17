@@ -14,7 +14,13 @@
 		type="string"
 		optional="true"
 		description="Set to a unique id to make it collapsble" />
-	<f:if condition="{collapseIdentifier}">
+	<f:argument
+	    name="titleLink"
+	    type="string"
+	    optional="true"
+	    description="Edit Link" />
+		
+		<f:if condition="{collapseIdentifier}">
 		<f:then>
 			<div class="panel panel-default">
 				<div
@@ -45,7 +51,16 @@
 		<f:else>
 			<div class="panel panel-{class}">
 				<div class="panel-heading">
-					<div class="panel-title">{title}</div>
+					<div class="panel-title">
+						 <f:if condition="{titleLink}">
+							<f:then>
+								<a href="{titleLink}">{title}</a>
+							</f:then>
+							<f:else>
+								{title}
+							</f:else>
+						</f:if>
+					</div>
 				</div>
 				<div class="panel-body">{f:slot()}</div>
 			</div>
