@@ -29,7 +29,11 @@
 		type="string"
 		optional="1"
 		default="small" />
-
+    <f:argument
+        name="titleLink"
+        type="string"
+        optional="true"
+        description="Edit Link" />
 	{f:variable(name:'content',value:'{f:slot()}')}
 
 	<div class="card {f:if(condition:class,then:'card-{class}')} {additionalClass}">
@@ -44,7 +48,16 @@
 				</f:if>
 				<div class="card-header-body">
 					<f:if condition="{title}">
-						<h2 class="card-title">{title}</h2>
+						<h2 class="card-title">
+                            <f:if condition="{titleLink}">
+                                <f:then>
+                                    <a href="{titleLink}">{title}</a>
+                                </f:then>
+                                <f:else>
+                                    {title}
+                                </f:else>
+                            </f:if>
+                        </h2>
 					</f:if>
 					<f:if condition="{subtitle}">
 						<span class="card-subtitle">{subtitle}</span>
