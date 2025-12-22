@@ -11,7 +11,7 @@
         }
     },
 	"require": {
-		"typo3/cms-fluid": "^13"
+		"typo3/cms-fluid": "^13 || ^14"
 	},
 	"suggest": {
 		"andersundsehr/storybook": "Use storybook to render the components"
