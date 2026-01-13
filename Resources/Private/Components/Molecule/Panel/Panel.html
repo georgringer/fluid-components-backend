@@ -4,6 +4,10 @@
 	<f:argument
 		name="title"
 		type="string" />
+    <f:argument
+        name="titleIcon"
+        optional="{true}"
+        type="string" />
 	<f:argument
 		name="class"
 		type="string"
@@ -19,7 +23,7 @@
 	    type="string"
 	    optional="true"
 	    description="Edit Link" />
-		
+
 		<f:if condition="{collapseIdentifier}">
 		<f:then>
 			<div class="panel panel-default">
@@ -34,7 +38,11 @@
 							data-bs-target="#panel-id-{collapseIdentifier}"
 							aria-controls="panel-id-{collapseIdentifier}"
 							aria-expanded="false">
-							<div class="panel-title">{title}</div>
+							<div class="panel-title">
+                                <f:if condition="{titleIcon}">
+                                    <core:icon identifier="{titleIcon}" />
+                                </f:if>
+                                {title}</div>
 							<span class="caret"></span>
 						</button>
 					</div>
@@ -54,9 +62,17 @@
 					<div class="panel-title">
 						 <f:if condition="{titleLink}">
 							<f:then>
-								<a href="{titleLink}">{title}</a>
+								<a href="{titleLink}">
+                                    <f:if condition="{titleIcon}">
+                                        <core:icon identifier="{titleIcon}" />
+                                    </f:if>
+                                    {title}
+                                </a>
 							</f:then>
 							<f:else>
+                                <f:if condition="{titleIcon}">
+                                    <core:icon identifier="{titleIcon}" />
+                                </f:if>
 								{title}
 							</f:else>
 						</f:if>
